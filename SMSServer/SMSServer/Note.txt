@@ -1,0 +1,55 @@
+﻿
+
+
+            await Task.Run(() =>
+                {
+                    if (!connection.SendAsync(writeEventArgs))
+                    {
+                        this.ProcessSend(writeEventArgs);
+                    }
+                }
+            );
+
+
+var confirmed = await DisplayAlert("Unsaved Changes", "Save changes?", "Save", "Discard");
+
+
+
+    <CollectionView Margin="20"
+                    ItemTemplate="{StaticResource OutgoingSMSTemplate}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged"
+                    ItemsSource="{x:Static data:OutgoingSMSData.OutgoingSMSs}"        
+        />
+
+        adb forward tcp:9111 tcp:9111
+
+
+
+                    Device.BeginInvokeOnMainThread(async () =>
+            {
+                var page = e.AppAction.Id switch
+                {
+                    "battery_info" => new BatteryPage(),
+                    "app_info" => new AppInfoPage(),
+                    _ => default(Page)
+                };
+
+                if (page != null)
+                {
+                    await Application.Current.MainPage.Navigation.PopToRootAsync();
+                    await Application.Current.MainPage.Navigation.PushAsync(page);
+                }
+            });
+
+
+                           string strPN = SMSParameter.PhoneNumber;
+                Regex rgx = new Regex(@"[0-9]{10}");
+                bool blnT = rgx.IsMatch(strPN);
+                if (!blnT)
+                {
+                    ICrossHelper ichT = DependencyService.Get<ICrossHelper>();
+                    ichT.ShowErrorMessage("Неправильный формат телефонного номера для отправки СМС - должно быть 10 цифр!");
+                    IsBusy = false;
+                    return ;
+                }

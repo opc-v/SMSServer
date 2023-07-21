@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"             
+             x:Class="SMSServer.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+
+
+
+
+        <DataTemplate x:Key="OutgoingSMSTemplate">
+            <Grid Padding="2"
+                  RowDefinitions="Auto,Auto"
+                  ColumnDefinitions="50*,50*"
+                  HorizontalOptions="FillAndExpand">
+                <Label Grid.Row="0"
+                       Grid.Column="0" 
+                       Text="{Binding PhoneNumber}" 
+                       
+                       FontAttributes="Bold" />
+                <Label Grid.Row="0"
+                       Grid.Column="1" 
+                       Text="{Binding SentDT}"
+                       FontAttributes="None" 
+                       HorizontalOptions="End" />
+                <Label Grid.Row="1"
+                       Grid.ColumnSpan="2" 
+                       Text="{Binding Text}" 
+                       FontAttributes="Italic" 
+                       HorizontalOptions="FillAndExpand"
+                       />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="AnimalSearchTemplate">
+            <Grid Padding="10"
+                  ColumnDefinitions="0.15*,0.85*">
+                <Image Source="{Binding ImageUrl}"
+                       HeightRequest="40"
+                       WidthRequest="40" />
+                <Label Grid.Column="1" 
+                       Text="{Binding Name}" 
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="SMSSearchTemplate">
+            <Grid Padding="10"
+                  ColumnDefinitions="0.15*,0.85*">
+                <Image Source="Search.png"
+                       HeightRequest="40"
+                       WidthRequest="40" />
+                <Label Grid.Column="1" 
+                       Text="{Binding Text}" 
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ConnectionsTemplate">
+            <Grid Padding="2"
+                  RowDefinitions="Auto,Auto"
+                  ColumnDefinitions="50*,50*"
+                  HorizontalOptions="FillAndExpand">
+                <Label Grid.Row="0"
+                       Grid.Column="0" 
+                       Text="{Binding ClientCode}" 
+                       
+                       FontAttributes="Bold" />
+                <Label Grid.Row="0"
+                       Grid.Column="1" 
+                       Text="{Binding SMSSentQntty}"
+                       FontAttributes="None" 
+                       HorizontalOptions="End" />
+                <Label Grid.Row="1"
+                       Grid.Column="0" 
+                       Text="{Binding IpEndpoint }" 
+                       FontAttributes="None" 
+                       />
+                <Label Grid.Row="1"
+                       Grid.Column="1" 
+                       Text="{Binding ConnectedDT}"
+                       FontAttributes="None" 
+                       HorizontalOptions="End" />                
+            </Grid>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

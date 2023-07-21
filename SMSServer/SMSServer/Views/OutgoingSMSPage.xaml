@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:SMSServer.Controls"
+             xmlns:data="clr-namespace:SMSServer.Data"
+             xmlns:views="clr-namespace:SMSServer.Views"             
+             x:Class="SMSServer.Views.OutgoingSMSPage"
+             Title="OutgoingSMS">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                        Value="#546DFE" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <Shell.SearchHandler>
+        <controls:OutgoingSMSSearchHandler Placeholder="Enter search term"
+                                      ShowsResults="true"
+                                      ItemTemplate="{StaticResource SMSSearchTemplate}"
+                                      OutgoingSMSSs="{x:Static data:OutgoingSMSData.OutgoingSMSs}"
+                                      SelectedItemNavigationTarget="{x:Type views:OutgoingSMSDetailPage}" 
+                                           DisplayMemberName="PhoneNumber"/>
+    </Shell.SearchHandler>
+
+    <CollectionView Margin="3"
+                    ItemsSource="{Binding Items}"
+                    ItemTemplate="{StaticResource OutgoingSMSTemplate}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged"
+                    x:Name="ItemsListView" 
+        />
+</ContentPage>

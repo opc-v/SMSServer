@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SMSServer.Views.OutgoingSMSDetailPage"
+             Title="Outgoing SMS details">
+    <ScrollView>
+        <StackLayout Margin="5">
+            <Label Text="{Binding PhoneNumber}" 
+                   HorizontalOptions="Center" 
+                   Style="{DynamicResource TitleStyle}" />
+            <Label Text="{Binding Text}" 
+                   FontAttributes="Italic" 
+                   HorizontalOptions="Center" />
+            <Grid Padding="2"
+                  RowDefinitions="Auto,Auto"
+                  ColumnDefinitions="30*,70*"
+                  HorizontalOptions="FillAndExpand">
+                <Label Grid.Row="0"
+                       Grid.Column="0" 
+                       Text="Sent" 
+                       FontAttributes="None" />
+                <Label Grid.Row="0"
+                       Grid.Column="1" 
+                       Text="{Binding SentDT}"
+                       FontAttributes="None"
+                       Style="{DynamicResource BodyStyle}" 
+                       HorizontalOptions="End" />
+                <Label Grid.Row="1"
+                       Grid.Column="0" 
+                       Text="Delivered" 
+                       FontAttributes="None" />
+                <Label Grid.Row="1"
+                       Grid.Column="1" 
+                       Text="{Binding DeliveredDT}"
+                       FontAttributes="None"
+                       Style="{DynamicResource BodyStyle}" 
+                       HorizontalOptions="End" />                
+            </Grid>
+        </StackLayout>
+    </ScrollView>    
+</ContentPage>
+

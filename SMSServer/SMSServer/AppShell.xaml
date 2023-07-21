@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:controls="clr-namespace:SMSServer.Controls"
+       xmlns:sys="clr-namespace:System;assembly=netstandard"       
+       xmlns:local="clr-namespace:SMSServer.Views"
+       Title="SMSServer"
+       x:Class="SMSServer.AppShell"
+       x:Name="shell"       
+       FlyoutHeaderBehavior="CollapseOnScroll"
+       >
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+ 
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#455A64" />
+            <Setter Property="Shell.ForegroundColor"
+                    Value="White" />
+            <Setter Property="Shell.TitleColor"
+                    Value="White" />
+            <Setter Property="Shell.DisabledColor"
+                    Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor"
+                    Value="#95FFFFFF" />
+        </Style>
+        <Style TargetType="ShellItem"
+               BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="InformationShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#689F39" />
+        </Style>
+
+        <Style x:Key="AboutShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#96d1ff" />
+        </Style>
+
+        <Style x:Key="OutgoingSMSShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value ="LightGreen"  />
+        </Style>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem Route="smsserver"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <!--
+
+        Shell has implicit conversion operators that enable the Shell visual hierarchy to be simplified.
+        This is possible because a subclassed Shell object can only ever contain a FlyoutItem object or a TabBar object,
+        which can only ever contain Tab objects, which can only ever contain ShellContent objects.
+
+        The code below demonstrates using these implicit conversion operators to simplify the visual hierarchy. Code that
+        relies on the implicit conversion operators will produce intellisense errors in the Visual Studio XAML editor. However,
+        this code is valid and does build.
+               
+        -->
+
+        <ShellContent Route="outgoingsms"
+                      Style="{StaticResource OutgoingSMSShell}"
+                      Title="Outgoing SMS"
+                      Icon="OutgoingSMS.png"
+                      ContentTemplate="{DataTemplate local:OutgoingSMSPage}" />
+        <ShellContent Route="information"
+                      Style="{StaticResource InformationShell}"
+                      Title="Information"
+                      Icon="info.png"
+                      ContentTemplate="{DataTemplate local:InformationPage}"
+                      />
+
+
+    </FlyoutItem>
+
+    <MenuItem Text="Start SMS Server"
+               IconImageSource="StartServer.png"
+              x:Name="StartStopMenu"
+              Command="{Binding StartStopCommand}"
+               />
+</Shell>

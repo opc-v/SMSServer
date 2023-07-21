@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSServer.Android", "SMSServer\SMSServer.Android\SMSServer.Android.csproj", "{509DA213-4888-428D-8E8C-BEF2D2AE9128}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMSServer", "SMSServer\SMSServer\SMSServer.csproj", "{C41A0B8C-1641-416F-BFBA-CAFA83D47638}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMSExchange", "SMSServer\SMSExchange\SMSExchange.csproj", "{C3B6F341-3012-428B-BB49-B8478E2EF6DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSServerTest", "SMSServer\SMSServerTest\SMSServerTest\SMSServerTest.csproj", "{4297C56D-E498-48FA-8EB7-F4D417DC62FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{509DA213-4888-428D-8E8C-BEF2D2AE9128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509DA213-4888-428D-8E8C-BEF2D2AE9128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509DA213-4888-428D-8E8C-BEF2D2AE9128}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{509DA213-4888-428D-8E8C-BEF2D2AE9128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509DA213-4888-428D-8E8C-BEF2D2AE9128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509DA213-4888-428D-8E8C-BEF2D2AE9128}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C41A0B8C-1641-416F-BFBA-CAFA83D47638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C41A0B8C-1641-416F-BFBA-CAFA83D47638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C41A0B8C-1641-416F-BFBA-CAFA83D47638}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C41A0B8C-1641-416F-BFBA-CAFA83D47638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C41A0B8C-1641-416F-BFBA-CAFA83D47638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C41A0B8C-1641-416F-BFBA-CAFA83D47638}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C3B6F341-3012-428B-BB49-B8478E2EF6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B6F341-3012-428B-BB49-B8478E2EF6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B6F341-3012-428B-BB49-B8478E2EF6DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B6F341-3012-428B-BB49-B8478E2EF6DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4297C56D-E498-48FA-8EB7-F4D417DC62FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4297C56D-E498-48FA-8EB7-F4D417DC62FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4297C56D-E498-48FA-8EB7-F4D417DC62FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4297C56D-E498-48FA-8EB7-F4D417DC62FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6337529B-5140-4D8A-87EC-518F230DE45B}
+	EndGlobalSection
+EndGlobal
