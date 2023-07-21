@@ -1,1 +1,1 @@
-# SMSServer
+# Android SMS Outgoing Message Server
